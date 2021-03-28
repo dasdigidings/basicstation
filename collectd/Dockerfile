@@ -20,4 +20,4 @@ COPY collectd.conf.d/* /etc/collectd/collectd.conf.d/
 
 COPY run.sh ./
 
-CMD ["bash", "run.sh"]
+CMD ["/opt/ttn-collectd/run.sh"]
