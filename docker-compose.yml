@@ -12,6 +12,14 @@ services:
     privileged: true
     network_mode: host
     restart: always
+    environment:
+      - GW_GPS = false
+      - GW_RESET_PIN = 11
+      - GW_RESET_GPIO = 17
+      - MODEL = "SX1301"
+      - TTN_STACK_VERSION = 3
+      - TTN_REGION = "eu1"
+      - TC_KEY = 0
   # Collectd
   collectd:
     build: collectd
@@ -20,8 +28,8 @@ services:
     network_mode: host
     restart: always
     environment:
-      GW_COLLECTD_SERVER: "${GW_COLLECTD_SERVER}"
-      GW_COLLECTD_INTERVAL: "${GW_COLLECTD_INTERVAL}"
-      GW_BME280: "${GW_BME280:-false}"
-      GW_BME280_ADDR: "${GW_BME280_ADDR}"
-      GW_BME280_SMBUS: "${GW_BME280_SMBUS}"
+      - GW_COLLECTD_SERVER = "${GW_COLLECTD_SERVER}"
+      - GW_COLLECTD_INTERVAL = "${GW_COLLECTD_INTERVAL}"
+      - GW_BME280 = "${GW_BME280:-false}"
+      - GW_BME280_ADDR = "${GW_BME280_ADDR}"
+      - GW_BME280_SMBUS = "${GW_BME280_SMBUS}"
