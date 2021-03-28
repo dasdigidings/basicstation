@@ -52,7 +52,7 @@ ${MBEDINC}/%.h: ${PLT}/include/mbedtls/%.h
 	@cp $< $@
 
 ${PLT}: prep.sh
-	platform=${platform} variant=${variant} ["./prep.sh"]
+	platform=${platform} variant=${variant} ./prep.sh
 	$(MAKE) --no-print-directory all platform=${platform} variant=${variant}
 
 clean:
