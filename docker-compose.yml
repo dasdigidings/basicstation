@@ -1,0 +1,13 @@
+﻿# Docker-compose file for TTN gateway
+# Collectd reporting stack
+# Requires docker-compose 1.9 or newer
+
+# Version 2.1 for resin compatibility
+version: '2.1'
+services:
+  # The gateway itself
+  gateway:
+    build: gateway
+    privileged: true
+    network_mode: host
+    restart: always
