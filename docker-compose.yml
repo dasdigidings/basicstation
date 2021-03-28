@@ -8,12 +8,14 @@ services:
   # Gateway
   gateway:
     build: gateway
+    image: dasdigidings/ttn-gateway
     privileged: true
     network_mode: host
     restart: always
   # Collectd
   collectd:
     build: collectd
+    image: dasdigidings/ttn-collectd
     privileged: true
     network_mode: host
     restart: always
