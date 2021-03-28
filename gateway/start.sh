@@ -25,7 +25,7 @@ if [ -z ${MODEL} ] ;
  else
     echo "Using MODEL: $MODEL"
     if [ "$MODEL" = "SX1301" ] || [ "$MODEL" = "RAK2245" ] || [ "$MODEL" = "iC880a" ];then
-    	RUN ["chmod", "+x", "./start_sx1301.sh"]
+    	chmod +x start_sx1301.sh
         ./start_sx1301.sh
     fi
     if [ "$MODEL" = "SX1302" ] || [ "$MODEL" = "RAK2287" ];then
