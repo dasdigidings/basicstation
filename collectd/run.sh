@@ -20,7 +20,7 @@ then
   unset GwVars
 
   # Set hostname, we take GW_ID, or Resin device name
-  HostName="${GW_ID:-$RESIN_DEVICE_NAME_AT_INIT}"
+  HostName="${GW_ID:-$BALENA_DEVICE_NAME_AT_INIT}"
   echo "*** Setting hostname to ${HostName}"
   sed -i "s/^FQDNLookup .*/FQDNLookup false/" "${Config}"
   sed -i "s/^#Hostname .*/Hostname \"${HostName}\"/" "${Config}"
