@@ -29,6 +29,7 @@ if [ -z ${MODEL} ] ;
         ./start_sx1301.sh
     fi
     if [ "$MODEL" = "SX1302" ] || [ "$MODEL" = "RAK2287" ];then
+    	chmod +x start_sx1302.sh
         ./start_sx1302.sh
     fi
 fi
