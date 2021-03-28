@@ -1,4 +1,4 @@
-﻿# Docker-compose file for TTN gateway
+# Docker-compose file for TTN gateway
 # Collectd reporting stack
 # Requires docker-compose 1.9 or newer
 
