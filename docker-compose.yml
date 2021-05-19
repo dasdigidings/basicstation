@@ -1,11 +1,12 @@
-# Docker-compose file for TTN gateway
+# Docker-compose file for
+# Basicstation Protokoll for a TTN gateway
 # Collectd reporting stack
 # Requires docker-compose 1.9 or newer
 
 # Version 2.1 for resin compatibility
 version: '2.1'
 services:
-  # Gateway
+  # Gateway Basicstation protokoll
   gateway:
     build: gateway
     image: dasdigidings/ttn-gateway
@@ -20,6 +21,8 @@ services:
       TTN_STACK_VERSION: "3"
       TTN_REGION: "eu1"
       TC_KEY: "0"
+    volumes:
+      - var_ttn_vol:/var/ttn
   # Collectd
   collectd:
     build: collectd
@@ -33,3 +36,12 @@ services:
       GW_BME280: "${GW_BME280:-false}"
       GW_BME280_ADDR: "${GW_BME280_ADDR}"
       GW_BME280_SMBUS: "${GW_BME280_SMBUS}"
+    volumes:
+      - var_ttn_vol:/var/ttn
+
+volumes:
+  var_ttn_vol:
+    driver: local
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
