@@ -1,4 +1,4 @@
-# Docker-compose file for
+﻿# Docker-compose file for
 # Basicstation Protokoll for a TTN gateway
 # Collectd reporting stack
 # Requires docker-compose 1.9 or newer

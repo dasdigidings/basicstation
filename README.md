@@ -1,4 +1,4 @@
-# LoRa Basics™ Station using balena.io with sx1301 and sx1302 LoRa concentrators
+﻿# LoRa Basics™ Station using balena.io with sx1301 and sx1302 LoRa concentrators
 
 This project deploys a LoRaWAN gateway with Basics Station Packet Forward protocol with balena. It runs on a Raspberry Pi (3/4) or balenaFin with a RAK2245, RAK2287 and IMST iC880a LoRa concentrators (sx1301 and sx1302).
 
