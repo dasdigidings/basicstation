@@ -48,8 +48,23 @@ If you are a balena CLI expert, feel free to use balena CLI.
 
 - Sign up on [balena.io](https://dashboard.balena.io/signup)
 - Create a new application on balenaCloud.
-- Clone this repository to your local workspace.
+- Clone this repository to your local workspace with `git clone https://github.com/dasdigidings/basicstation.git`
+- Edit the code (collectd/collectd.conf.d/network.conf - IP/URL + username + password from your collectd server)
 - Using [Balena CLI](https://www.balena.io/docs/reference/cli/), push the code with `balena push <application-name>`
+- See the magic happening, your device is getting updated 🌟Over-The-Air🌟!
+
+### Via Git
+
+If you are a Git expert, feel free to use Git.
+
+- Sign up on [balena.io](https://dashboard.balena.io/signup)
+- Create a new application on balenaCloud.
+- Clone this repository to your local workspace with `git clone https://github.com/dasdigidings/basicstation.git`
+- `cd basicstation` and connect the new git to your balena application with `git remote add balena youraccount@git.balena-cloud.com:youraccount/yourapplication.git` (adjust youraccount and yourapplication)
+- Edit the code (collectd/collectd.conf.d/network.conf - IP/URL + username + password from your collectd server)
+- Add the edited files with `git add .`
+- Commit the edited files with `git commit -m "[FIX] edited the collectd server address"`
+- Push the files to your application on balena.io with `git push -f balena master`
 - See the magic happening, your device is getting updated 🌟Over-The-Air🌟!
 
 
