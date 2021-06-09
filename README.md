@@ -1,13 +1,17 @@
-﻿# LoRa Basics™ Station using balena.io with sx1301 and sx1302 LoRa concentrators
+﻿### Be aware this documentation is work in progress and may have errors in it or is missing steps - June 2021
 
-This project deploys a LoRaWAN gateway with Basics Station Packet Forward protocol with balena. It runs on a Raspberry Pi (3/4) or balenaFin with a RAK2245, RAK2287 and IMST iC880a LoRa concentrators (sx1301 and sx1302).
+# LoRa Basics™ Station using balena.io with sx1301 and sx1302 LoRa concentrators and by using docker-compose allow to run more container parallel
+
+This project deploys a LoRaWAN gateway with Basics Station Packet Forward protocol with balena. It runs on a Raspberry Pi (3/4) or balenaFin with a RAK2245, RAK2287 and IMST iC880a LoRa concentrators (sx1301 and sx1302). It provides a second container containing a collectd client as well to transmit metadata from the gateway to a collectd server.
 
 
 ## Introduction
 
-Deploy a The Things Network (TTN), The Things Industries (TTI) or The Things Stack (TTS) LoRaWAN gateway running the Basics Station Semtech Packet Forward protocol. We are using balena.io and RAK to reduce fricition for the LoRa gateway fleet owners.
+Deploy a The Things Network (TTN), The Things Industries (TTI) or The Things Stack (TTS) LoRaWAN gateway running the Basics Station Semtech Packet Forward protocol. We are using balena.io and RAK or IMST to reduce fricition for the LoRa gateway fleet owners.
 
 The Basics Station protocol enables the LoRa gateways with a reliable and secure communication between the gateways and the cloud and it is becoming the standard Packet Forward protocol used by most of the LoRaWAN operators.
+
+By using a docler-compose build we are able to run other container aswell, in this instance a collectd client to transmit metadata from the gateway to a collectd server. Feel free to change the YAML for docker-compose to add more container or change the container.
 
 
 ## Getting started
@@ -32,19 +36,11 @@ The Basics Station protocol enables the LoRa gateways with a reliable and secure
 * A TTN  or The Things Stack V3 account ([sign up here](https://console.thethingsnetwork.org)) or [here](https://ttc.eu1.cloud.thethings.industries/console/)
 * A balenaCloud account ([sign up here](https://dashboard.balena-cloud.com/))
 * [balenaEtcher](https://balena.io/etcher)
+* A collectd server to send the metadata to (IP address, name and password)
 
 Once all of this is ready, you are able to deploy this repository following instructions below.
 
 ## Deploy the code
-
-### Via [Balena Deploy](https://www.balena.io/docs/learn/deploy/deploy-with-balena-button/)
-
-Running this project is as simple as deploying it to a balenaCloud application. You can do it in just one click by using the button below:
-
-[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/balenalabs/basicstation)
-
-Follow instructions, click Add a Device and flash an SD card with that OS image dowloaded from balenaCloud. Enjoy the magic 🌟Over-The-Air🌟!
-
 
 ### Via [Balena-Cli](https://www.balena.io/docs/reference/balena-cli/)
 
@@ -70,7 +66,7 @@ That enables a fleet of LoRa gateways with both (e.g.) ```RAK2245``` and ```RAK2
 
 ### Define your REGION and TTN STACK VERSION
 
-From now it's important to facilitate the ```TTN_STACK_VERSION``` that you are going to use ```2``` (TTN v2) or ```3``` (The Things Stack or TTN V3). The default variable is defined (still) into ```2```(V2).
+From now it's important to facilitate the ```TTN_STACK_VERSION``` that you are going to use ```2``` (TTN v2) or ```3``` (The Things Stack or TTN V3). The default variable is defined (now finally) into ```3```(V3).
 Before starting, also check the ```TTN_REGION```. It needs to be changed if your region is not Europe. In case you use version 3, the European version is ```eu1```. Check [here](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) the LoRa frequencies by country.
 
 With these variables ```TTN_REGION``` and ```TTN_STACK_VERSION``` the ```TC_URI``` will be generated automatically. In case that you want to point to another specific TC_URI, feel free to change this Device Variable on the balenaCloud.
@@ -159,6 +155,17 @@ Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`GW_ID`** | `STRING` | TTN Gateway EUI | (EUI)
 **`GW_KEY`** | `STRING` | Unique TTN Gateway Key | (Key pasted from TTN console)
+
+
+#### collectd Specific Variables
+
+Variable Name | Value | Description | Default
+------------ | ------------- | ------------- | -------------
+**`GW_COLLECTD_SERVER`** | `STRING` | URL or IP of the collectd server | please set
+**`GW_COLLECTD_INTERVAL`** | `STRING` | interval to send metadata | 30 seconds
+**`GW_BME280`** | `STRING` | BME280 connected or not (true or false) | false
+**`GW_BME280_ADDR`** | `STRING` | BME280 address (default 0x76) | please set
+**`GW_BME280_SMBUS`** | `STRING` | BME280 SMBus (default 1) | please set
 
 
 At this moment your LoRaWAN gateway should be up and running. Check on the TTN or TTS console if it shows the connected status.
