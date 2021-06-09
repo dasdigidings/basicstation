@@ -11,7 +11,7 @@ Deploy a The Things Network (TTN), The Things Industries (TTI) or The Things Sta
 
 The Basics Station protocol enables the LoRa gateways with a reliable and secure communication between the gateways and the cloud and it is becoming the standard Packet Forward protocol used by most of the LoRaWAN operators.
 
-By using a docler-compose build we are able to run other container aswell, in this instance a collectd client to transmit metadata from the gateway to a collectd server. Feel free to change the YAML for docker-compose to add more container or change the container.
+By using a docker-compose build we are able to run other container aswell, in this instance a collectd client to transmit metadata from the gateway to a collectd server. Feel free to change the YAML for docker-compose to add more container or change the container.
 
 
 ## Getting started
