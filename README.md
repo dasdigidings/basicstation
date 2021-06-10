@@ -11,15 +11,15 @@ Deploy a The Things Network (TTN), The Things Industries (TTI) or The Things Sta
 
 The Basics Station protocol enables the LoRa gateways with a reliable and secure communication between the gateways and the cloud and it is becoming the standard Packet Forward protocol used by most of the LoRaWAN operators.
 
-By using a docker-compose build we are able to run other container as well, in this instance a collectd client to transmit metadata from the gateway to a collectd server. Feel free to change the YAML for docker-compose to add more container or change the container.
+By using a docker-compose build we are able to run other container as well, in this instance a collectd client to transmit metadata from the gateway to a collectd server. Feel free to change the YAML for docker-compose to add more container or change the container. If you want to know how to connect a BME280 sensor to your gateway have a look into this repo: [ch2iPCB-upgrade-for-RPI-Gateway](https://github.com/dasdigidings/ch2iPCB-upgrade-for-RPI-Gateway), or just connect a BME280 to the I²C and set the variables.
 
 
 ## Getting started
 
 ### Hardware
 
-* Raspberry Pi 4 or [balenaFin](https://www.balena.io/fin/)
-* SD card in case of the RPi 4
+* Raspberry Pi 3/4 or [balenaFin](https://www.balena.io/fin/)
+* SD card in case of the RPi 3/4
 
 #### LoRa Concentrators
 
