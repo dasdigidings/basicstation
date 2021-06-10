@@ -1,6 +1,4 @@
-﻿### Be aware this documentation is work in progress and may have errors in it or is missing steps - June 2021
-
-# LoRa Basics™ Station using balena.io with sx1301 and sx1302 LoRa concentrators and by using docker-compose allow to run more container parallel
+﻿# LoRa Basics™ Station using balena.io with sx1301 and sx1302 LoRa concentrators and by using docker-compose allow to run more container parallel
 
 This project deploys a LoRaWAN gateway with Basics Station Packet Forward protocol with balena. It runs on a Raspberry Pi (3/4) or balenaFin with a RAK2245, RAK2287 and IMST iC880a LoRa concentrators (sx1301 and sx1302). It provides a second container containing a collectd client as well to transmit metadata from the gateway to a collectd server.
 
