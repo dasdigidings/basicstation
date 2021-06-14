@@ -103,8 +103,8 @@ Copy the result and you are ready to register your gateway with this EUI.
 2. Click "Go to Gateways" icon.
 3. Click the "Add gateway" button.
 4. Introduce the data for the gateway.
-5. Paste the EUI from the balenaCloud tags.
-6. Complete the form and click Register gateway.
+5. Paste the EUI from the balenaCloud tags or the Ethernet mac address of the board (calculated above).
+6. Complete the form and click Register gateway, please include geoinformation for ttnmapper and such services.
 7. Once the gateway is created, click "API keys" link.
 8. Click "Add API key" button.
 9. Select "Grant individual rights" and then "Link as Gateway to a Gateway Server for traffic exchange ..." and then click "Create API key".
@@ -116,8 +116,8 @@ Copy the result and you are ready to register your gateway with this EUI.
 2. Click Gateways button.
 3. Click the "Register gateway" link.
 4. Check “I’m using the legacy packet forwarder” checkbox.
-5. Paste the EUI from the balenaCloud tag or the Ethernet mac address of the board (calculated above)
-6. Complete the form and click Register gateway.
+5. Paste the EUI from the balenaCloud tag or the Ethernet mac address of the board (calculated above).
+6. Complete the form and click Register gateway, please include geoinformation for ttnmapper and such services.
 7. Copy the Key generated on the gateway page.
 
 
